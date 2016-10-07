@@ -58,10 +58,10 @@ public class SurfaceControl {
     private static native void nativeSetWindowCrop(long nativeObject, int l, int t, int r, int b);
     private static native void nativeSetLayerStack(long nativeObject, int layerStack);
 
-    private static native void nativeSetBlur(long nativeObject, float blur);
+/*    private static native void nativeSetBlur(long nativeObject, float blur);
     private static native void nativeSetBlurMaskSurface(long nativeObject, long maskLayerNativeObject);
     private static native void nativeSetBlurMaskSampling(long nativeObject, int blurMaskSampling);
-    private static native void nativeSetBlurMaskAlphaThreshold(long nativeObject, float alpha);
+    private static native void nativeSetBlurMaskAlphaThreshold(long nativeObject, float alpha);*/
 
     private static native boolean nativeClearContentFrameStats(long nativeObject);
     private static native boolean nativeGetContentFrameStats(long nativeObject, WindowContentFrameStats outStats);
@@ -396,7 +396,7 @@ public class SurfaceControl {
 
     public void setBlur(float blur) {
         checkNotReleased();
-        nativeSetBlur(mNativeObject, blur);
+        //nativeSetBlur(mNativeObject, blur);
     }
 
     public void setBlurMaskSurface(SurfaceControl maskSurface) {
@@ -404,17 +404,17 @@ public class SurfaceControl {
         if (maskSurface != null) {
             maskSurface.checkNotReleased();
         }
-        nativeSetBlurMaskSurface(mNativeObject, maskSurface == null ? 0:maskSurface.mNativeObject);
+        //nativeSetBlurMaskSurface(mNativeObject, maskSurface == null ? 0:maskSurface.mNativeObject);
     }
 
     public void setBlurMaskSampling(int blurMaskSampling) {
         checkNotReleased();
-        nativeSetBlurMaskSampling(mNativeObject, blurMaskSampling);
+        //nativeSetBlurMaskSampling(mNativeObject, blurMaskSampling);
     }
 
     public void setBlurMaskAlphaThreshold(float alpha) {
         checkNotReleased();
-        nativeSetBlurMaskAlphaThreshold(mNativeObject, alpha);
+        //nativeSetBlurMaskAlphaThreshold(mNativeObject, alpha);
     }
 
     public void hide() {

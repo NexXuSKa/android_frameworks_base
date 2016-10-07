@@ -315,7 +315,7 @@ static void nativeSetLayerStack(JNIEnv* env, jclass clazz, jlong nativeObject, j
         doThrowIAE(env);
     }
 }
-
+/*
 static void nativeSetBlur(JNIEnv* env, jclass clazz, jlong nativeObject, jfloat blur) {
     SurfaceControl* const ctrl = reinterpret_cast<SurfaceControl *>(nativeObject);
     status_t err = ctrl->setBlur(blur);
@@ -347,7 +347,7 @@ static void nativeSetBlurMaskAlphaThreshold(JNIEnv* env, jclass clazz, jlong nat
     if (err < 0 && err != NO_INIT) {
         doThrowIAE(env);
     }
-}
+}*/
 
 static jobject nativeGetBuiltInDisplay(JNIEnv* env, jclass clazz, jint id) {
     sp<IBinder> token(SurfaceComposerClient::getBuiltInDisplay(id));
@@ -647,14 +647,14 @@ static JNINativeMethod sSurfaceControlMethods[] = {
             (void*)nativeSetWindowCrop },
     {"nativeSetLayerStack", "(JI)V",
             (void*)nativeSetLayerStack },
-    {"nativeSetBlur", "(JF)V",
+/*    {"nativeSetBlur", "(JF)V",
             (void*)nativeSetBlur },
     {"nativeSetBlurMaskSurface", "(JJ)V",
             (void*)nativeSetBlurMaskSurface },
     {"nativeSetBlurMaskSampling", "(JI)V",
             (void*)nativeSetBlurMaskSampling },
     {"nativeSetBlurMaskAlphaThreshold", "(JF)V",
-            (void*)nativeSetBlurMaskAlphaThreshold },
+            (void*)nativeSetBlurMaskAlphaThreshold },*/
     {"nativeGetBuiltInDisplay", "(I)Landroid/os/IBinder;",
             (void*)nativeGetBuiltInDisplay },
     {"nativeCreateDisplay", "(Ljava/lang/String;Z)Landroid/os/IBinder;",
